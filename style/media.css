@@ -1,0 +1,23 @@
+:root {
+	--transcript-highlight-bg-color: #ff0000;
+	--transcript-highlight-text-color: #fff;
+	
+}
+
+.currentTranscript, .currentKeypoint {
+	color: var(--transcript-highlight-text-color);
+	background-color: var(--transcript-highlight-bg-color)
+}
+
+.transcript-block span, .keypoint-block span {
+    display: inline-block;
+    transition: transform .5s, background-color .5s;
+    padding: 0 .2em;
+    margin: 0 -0.2em;
+}
+
+#transcripts, #concepts, #slides {
+
+	height: 30vw;
+
+}

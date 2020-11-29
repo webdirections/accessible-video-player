@@ -1,0 +1,19 @@
+iframe {
+	display: block
+}
+
+section[role="complementary" ] {
+	width: 100%;
+	overflow: auto;
+
+}
+
+div.tabs, *[role="tablist"], *[role="tabpanel"] {
+	width: 100%;
+
+}
+
+div.tabs, *[role="tabpanel"] {
+	overflow: auto;
+
+}
