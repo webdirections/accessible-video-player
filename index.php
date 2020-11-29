@@ -6,9 +6,11 @@
 		<link href="style/tabs.css" rel="stylesheet">
 		<link href="style/app.css" rel="stylesheet">
 		<link href="style/media.css" rel="stylesheet">
+		
 		<script defer src='js/tabs.js'></script>
-			<script defer src='js/app.js'></script>
-			<script defer src="https://player.vimeo.com/api/player.js"></script>
+		
+		<script defer src='js/app.js'></script>
+		<script defer src="https://player.vimeo.com/api/player.js"></script>
 
 	</head>
 	<body>
@@ -16,7 +18,9 @@
             <h1>OzeWAI</h1>
         </header>
         <main>
-	<iframe title="Product://Remote Week 3" src="https://vimeo.com/event/445555/embed/f90347a978?controls=1&hd=1&autohide=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen id="video" class="fluid-width-video-wrapper"> </iframe>
+			<iframe title="Product://Remote Week 3" src="https://vimeo.com/event/445555/embed/f90347a978?controls=1&hd=1&autohide=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen id="video" class="fluid-width-video-wrapper"> </iframe>
+						<?php include('includes/captions.php'); ?>
+
         </main>
 
 		<section role="complementary" title="Transcript, Concepts and Slides">
@@ -42,6 +46,9 @@
 					tabindex="-1">
 				Slides
 				</button>
+				
+				<label><span>Closed Captions</span><input type="checkbox" id="captionToggle">
+
 			</div>
 			<div tabindex="0"
 				role="tabpanel"
@@ -62,7 +69,7 @@
 				aria-labelledby="slides-button"
 				hidden="">
 				<?php include('includes/slides.php'); ?>
-			</div>
+			</div>			
 		</div>
 		</section>
 	</body>

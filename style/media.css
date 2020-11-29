@@ -6,7 +6,7 @@
 
 .currentTranscript, .currentKeypoint {
 	color: var(--transcript-highlight-text-color);
-	background-color: var(--transcript-highlight-bg-color)
+	background-color: var(--transcript-highlight-bg-color);
 }
 
 .transcript-block span, .keypoint-block span {
@@ -17,9 +17,7 @@
 }
 
 #transcripts, #concepts, #slides {
-
 	height: 30vw;
-
 }
 
 .slidetext-block {
@@ -28,4 +26,93 @@
 
 #currentSlideText {
 	display: block
+}
+
+
+/* these display the caption elements*/
+#captions {
+    z-index: 21474836487;
+    height: auto;
+    overflow: scroll;
+    width: 100%;
+    font-size: 2em;
+    position: absolute;
+    margin: auto;
+    pointer-events: none;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    height: 100%;
+    top: 0;
+    left: 0
+}
+
+
+#captions span {
+position: absolute;
+opacity: 0;
+
+}
+
+#captions span.currentCaption {
+	color: var(--transcript-highlight-text-color);
+	background-color: var(--transcript-highlight-bg-color);
+	display: block;
+	padding: .5em;
+	width: 100%;
+	text-align: center;
+	border-radius:.2em;
+	z-index: 2147483647;
+	animation-fill-mode: both;
+	opacity: 1
+}
+
+
+/*these highlight the current items in the content tabs*/
+
+.transcript-block span, .keypoint-block span{
+	display: inline-block;
+	transition: transform .5s, background-color .5s;
+	padding: 0 .2em;
+	margin: 0 -0.2em
+
+}
+
+
+span.currentTranscript {
+	background-color: var(--transcript-highlight-bg-color);
+	color: var(--transcript-highlight-text-color);
+	transition: all .5s;
+	border-radius:.2em;
+	transform: scale(1.1);
+}
+
+
+
+.currentKeypoint {
+	background-color: var(--transcript-highlight-bg-color);
+	color: var(--transcript-highlight-text-color);
+	transition: all .5s;
+	border-radius:.2em;
+	padding: 1%
+}
+
+.currentKeypoint h1, .currentKeypoint h2, .currentKeypoint h3, .currentKeypoint h4, .currentKeypoint h5, .currentKeypoint q, .currentKeypoint blockquote {
+color: inherit}
+
+.video-content-content .currentKeypoint blockquote, .video-content-content .currentKeypoint q {
+color: inherit
+} 
+
+
+/* these style the slide texts*/
+
+#currentSlideText {
+	background-color: var(--transcript-highlight-bg-color);
+	color: var(--transcript-highlight-text-color);
+    border-radius: .2em;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+#currentSlideText h1, #currentSlideText h2, #currentSlideText h3, #currentSlideText h4, #currentSlideText h5, #currentSlideText q, #currentSlideText blockquote {
+color: inherit
 }
