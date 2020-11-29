@@ -1,5 +1,13 @@
-<section id="slides" title="current slide text for the presentation" aria-live="polite">
-<!-- we make this a live region as the user may want to have them read out-->
+<section id="slides">
+<!--
+	we make this a live region as the user may want to have them read out 
+	we'd want to consider 
+	
+	because only changes to the content of a live element trigger we use an initially empty element to take the current 
+-->
+
+<section id="currentSlideText" title="current slide text for the presentation" aria-live="polite" aria-atomic="true"></section>
+
 <!-- 1a_Mark Boulton.srt-->
 <section class='slidetext-block' data-blockStartTime='00:07:03'><section data-startTime="00:00:00">
 <h2>Guardrails or handcuffs? Building creative and sustainable design systems</h2>

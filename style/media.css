@@ -21,3 +21,11 @@
 	height: 30vw;
 
 }
+
+.slidetext-block {
+	display: none;
+}
+
+#currentSlideText {
+	display: block
+}

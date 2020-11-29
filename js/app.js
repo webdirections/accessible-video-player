@@ -37,6 +37,7 @@ var synchedMedia = {
 		currentCaption: null, //the current caption element
 		currentKeypoint: null, //the current keypoint element
 		currentSlideText: null, //the current element showing block of text of the slide showing now
+		currentSlideTextLive: null, //the element for showing the block of text of the current slide (for ARIA) 
 		captionToggle: null, //element for toggling captions on and off
 		scrollToggle: null, //element for toggling auto-scroll on and off
 		streamAdjustment: 1, //because livestreams run a little slow, we adjust the cations etc by this factor
@@ -149,6 +150,7 @@ var synchedMedia = {
 			var slideTextFragments = synchedMedia.initBlocks(".slidetext-block")
 			synchedMedia.slideTextFragments = slideTextFragments;
 
+			synchedMedia.currentSlideTextLive = document.querySelector("#currentSlideText")
 		},
 
 		initCaptionFragments: function(parentBlock){
@@ -212,6 +214,7 @@ var synchedMedia = {
 			synchedMedia.highlightCurrentCaption(currentTime);
 			synchedMedia.highlightCurrentKeypoint(currentTime);
 			synchedMedia.highlightCurrentSlideText(currentTime);
+// 			synchedMedia.updateCurrentSlideText(currentTime);
 
 
 		},
@@ -229,7 +232,7 @@ var synchedMedia = {
 				synchedMedia.currentTranscript = transcriptAtTime;
 				
 				if (synchedMedia.autoScroll) {
-					transcriptAtTime.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+					transcriptAtTime.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 				}
 			}
 
@@ -241,7 +244,7 @@ var synchedMedia = {
 
 			var captionAtTime = synchedMedia.getCaptionAtTimeinSecs(time);
 
-			if (captionAtTime && synchedMedia.currentCaption != captionAtTime) {
+			if (captionAtTime && (synchedMedia.currentCaption != captionAtTime)) {
 
 				if(synchedMedia.currentCaption){
 					synchedMedia.currentCaption.classList.remove("currentCaption");
@@ -259,7 +262,7 @@ var synchedMedia = {
 
 			var keypointAtTime = synchedMedia.getKeypointAtTimeinSecs(time);
 
-			if (keypointAtTime && synchedMedia.currentKeypoint != keypointAtTime) {
+			if (keypointAtTime && (synchedMedia.currentKeypoint != keypointAtTime)) {
 
 				if(synchedMedia.currentKeypoint){
 					synchedMedia.currentKeypoint.classList.remove("currentKeypoint");
@@ -269,7 +272,7 @@ var synchedMedia = {
 				synchedMedia.currentKeypoint = keypointAtTime;
 				
 				if (synchedMedia.autoScroll) {
-					keypointAtTime.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+					keypointAtTime.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
 				}
 			}
 
@@ -281,14 +284,15 @@ var synchedMedia = {
 
 			var slideTextAtTime = synchedMedia.getSlideTextAtTimeinSecs(time);
 
-			if (slideTextAtTime && synchedMedia.currentslideText != slideTextAtTime) {
+			if (slideTextAtTime && (synchedMedia.currentSlideText != slideTextAtTime)) {
 				if (synchedMedia.currentSlideText){
 					synchedMedia.currentSlideText.classList.remove("currentSlideText");
 				}
 
 				slideTextAtTime.classList.add("currentSlideText");
 				synchedMedia.currentSlideText = slideTextAtTime;
-// 				slideTextAtTime.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+				synchedMedia.currentSlideTextLive.innerHTML = slideTextAtTime.innerHTML;
+
 			}
 
 		},
@@ -308,8 +312,7 @@ var synchedMedia = {
 		    var elemBottom = element.getBoundingClientRect().bottom;
 
 		    var isVisible = (elemTop >= 0) && (elemBottom <= element.offsetParent.clientHeight);
-			// console.log({top: elemTop, );
-			// return false;
+
 		    return isVisible;
 		},
 
