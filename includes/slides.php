@@ -6,7 +6,7 @@
 	because only changes to the content of a live element trigger we use an initially empty element to take the current 
 -->
 
-<section id="currentSlideText" title="current slide text for the presentation" aria-live="polite" aria-atomic="true"></section>
+<section id="currentSlideText" aria-label="current slide text for the presentation" aria-live="polite" aria-atomic="true">Text or description of the current slide where relevant is displayed here.</section>
 
 <!-- 1a_Mark Boulton.srt-->
 <section class='slidetext-block' data-blockStartTime='00:07:03'><section data-startTime="00:00:00">

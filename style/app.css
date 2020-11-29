@@ -10,7 +10,13 @@ iframe {
 section[role="complementary" ] {
 	width: 100%;
 	overflow: auto;
+	position: relative;
+}
 
+div[role="toolbar"] {
+	position: absolute;
+	top: 0;
+	right: 0
 }
 
 div.tabs, *[role="tablist"], *[role="tabpanel"] {

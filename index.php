@@ -23,9 +23,15 @@
 
         </main>
 
-		<section role="complementary" title="Transcript, Concepts and Slides">
+		<section role="complementary" aria-label="Transcript, Concepts and Slides">
+				
+		<div role="toolbar" aria-label="tools for video captions">				
+			<label for="captionToggle"><span>Closed Captions</span><input type="checkbox" id="captionToggle"></label>
+			<label for="scrollToggle"><span>AutoScroll Content</span><input type="checkbox" id="scrollToggle" checked></label>
+		</div>
+
 		<div class="tabs">
-			<div role="tablist" aria-label="content-controls">
+			<div role="tablist" aria-label="Content controls">
 				<button role="tab"
 					aria-selected="true"
 					aria-controls="transcript-tab"
@@ -47,9 +53,6 @@
 				Slides
 				</button>
 				
-				<label><span>Closed Captions</span><input type="checkbox" id="captionToggle"></label>
-				<label><span>AutoScroll Content</span><input type="checkbox" id="scrollToggle" checked></label>
-
 			</div>
 			<div tabindex="0"
 				role="tabpanel"
