@@ -1,7 +1,6 @@
 :root {
-	--transcript-highlight-bg-color: #ff0000;
+	--transcript-highlight-bg-color: rgba(0, 0, 0, .8);
 	--transcript-highlight-text-color: #fff;
-	
 }
 
 .currentTranscript, .currentKeypoint {
@@ -35,13 +34,12 @@
     height: auto;
     overflow: scroll;
     width: 100%;
-    font-size: 2em;
     position: absolute;
     margin: auto;
     pointer-events: none;
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     height: 100%;
-    top: 0;
+    bottom: 0;
     left: 0
 }
 
@@ -53,16 +51,20 @@ opacity: 0;
 }
 
 #captions span.currentCaption {
-	color: var(--transcript-highlight-text-color);
-	background-color: var(--transcript-highlight-bg-color);
-	display: block;
-	padding: .5em;
-	width: 100%;
-	text-align: center;
-	border-radius:.2em;
-	z-index: 2147483647;
-	animation-fill-mode: both;
-	opacity: 1
+    color: var(--transcript-highlight-text-color);
+    background-color: var(--transcript-highlight-bg-color);
+    display: block;
+    padding: .5em;
+    width: 60%;
+    text-align: center;
+    border-radius: .2em;
+    z-index: 2147483647;
+    animation-fill-mode: both;
+    opacity: 1;
+    margin: 0 auto;
+    position: absolute;
+    left: 20%;
+    top: 0%;
 }
 
 
@@ -78,6 +80,8 @@ opacity: 0;
 
 
 span.currentTranscript {
+	background-color: var(--transcript-highlight-bg-color);
+	color: var(--transcript-highlight-text-color);
 	background-color: var(--transcript-highlight-bg-color);
 	color: var(--transcript-highlight-text-color);
 	transition: all .5s;

@@ -47,7 +47,8 @@
 				Slides
 				</button>
 				
-				<label><span>Closed Captions</span><input type="checkbox" id="captionToggle">
+				<label><span>Closed Captions</span><input type="checkbox" id="captionToggle"></label>
+				<label><span>AutoScroll Content</span><input type="checkbox" id="scrollToggle" checked></label>
 
 			</div>
 			<div tabindex="0"

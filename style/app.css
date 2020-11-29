@@ -1,5 +1,10 @@
+main {
+	position: relative;
+}
+
 iframe {
-	display: block
+	display: block;
+	margin: 1em auto
 }
 
 section[role="complementary" ] {
@@ -15,5 +20,4 @@ div.tabs, *[role="tablist"], *[role="tabpanel"] {
 
 div.tabs, *[role="tabpanel"] {
 	overflow: auto;
-
 }
