@@ -99,7 +99,7 @@ span.currentTranscript {
 	padding: 1%
 }
 
-.currentKeypoint h1, .currentKeypoint h2, .currentKeypoint h3, .currentKeypoint h4, .currentKeypoint h5, .currentKeypoint q, .currentKeypoint blockquote {
+.currentKeypoint h1, .currentKeypoint h2, .currentKeypoint h3, .currentKeypoint h4, .currentKeypoint h5, .currentKeypoint q, .currentKeypoint blockquote, .currentKeypoint a {
 color: inherit}
 
 .video-content-content .currentKeypoint blockquote, .video-content-content .currentKeypoint q {

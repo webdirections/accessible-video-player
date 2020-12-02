@@ -27,3 +27,9 @@ div.tabs, *[role="tablist"], *[role="tabpanel"] {
 div.tabs, *[role="tabpanel"] {
 	overflow: auto;
 }
+
+
+#transcript-tab, #concepts-tab, #slides-tab {
+	padding: 4%;
+	width: 90% 
+}
